@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-
+import {
+  ProfileAuthGuard as RoleGuard
+} from '../app/guard/profile-auth.guard';
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
 import { AuthComponent } from "./layouts/auth/auth.component";
@@ -44,9 +46,9 @@ const routes: Routes = [
     ],
   },
   // no layout views
-  { path: "profile", component: ProfileComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "", component: IndexComponent },
+  { path: "profile", component: ProfileComponent,canActivate:[RoleGuard] },
+  { path: "", component: LandingComponent },
+  { path: "index", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 

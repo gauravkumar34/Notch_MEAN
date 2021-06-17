@@ -23,10 +23,12 @@ export class RegisterComponent implements OnInit {
     const dataT ={
       ...this.formData.value
     }
-    this.service.signup(dataT).subscribe((resdata)=>{
-      console.log(dataT);
+    this.service.signup(dataT).then((resData)=>{
+      console.log(resData);
       this.formData.reset();
     }
-    )
+    ).catch(err=>{
+      console.log(err)
+    })
   }
 }
