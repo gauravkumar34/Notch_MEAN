@@ -1,0 +1,4 @@
+[[redirects]]
+  from ="/*"
+  to = "/dist/notus-angular/index.html"
+  status = 200
