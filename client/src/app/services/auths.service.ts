@@ -5,7 +5,7 @@ import { ApicallService } from './api/apicall.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthsService {
 
   constructor(public ApiCallService: ApicallService) { }
   signup(data:any){
@@ -16,6 +16,10 @@ export class AuthService {
   }
   signout(){
     return this.ApiCallService.getData('signout');
+  }
+  socailLogin(data:any){
+    return this.ApiCallService.postData('socaillogin',data);
 
   }
+
 }

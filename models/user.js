@@ -18,12 +18,15 @@ const userSchema = new mongoose.Schema(
       },
       hashed_password: {
         type: String,
-        required: true,
       },
       about: {
         type: String,
         trim: true,
       },
+      authToken:String,
+      idToken:String,
+      photoUrl:String,
+      provider:String,
       salt: String,
       role: {
         type: Number,

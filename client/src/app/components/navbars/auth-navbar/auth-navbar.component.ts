@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "src/app/services/auth.service";
+import { AuthsService } from "src/app/services/auths.service";
 import { UserService } from "src/app/services/user.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from "src/app/services/user.service";
 export class AuthNavbarComponent implements OnInit {
   navbarOpen = false;
   userLogin:any;
-  constructor(private service: AuthService,private userService: UserService) {
+  constructor(private service: AuthsService,private userService: UserService) {
     this.checkLogin()
   }
 

@@ -19,6 +19,19 @@ exports.signup = (req, res) => {
   });
 };
 
+exports.socialLogin = (req, res)=> {
+  const data = new User(req.body);
+  data.save((err, data) => {
+    if (err) {
+      return res.status(400).json({
+        err: errorHandler(err)
+      });
+    }
+    res.json({
+      data,
+    });
+  });
+}
 exports.signin = (req, res)=> {
   const {email, password} = req.body;
   User.findOne({email},(err, user)=>{
